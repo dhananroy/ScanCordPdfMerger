@@ -1,6 +1,6 @@
 # ScanCordPdfMerger
 
-ScanCordPdfMerger is a library for merge multiple pdf in singe pdf file, the size of this library is less than 100KB
+ScanCordPdfMerger is a library for merge multiple pdf in single pdf file for Android, the size of this library is less than 100KB
 ## Usage
 
 ScanCordPdfMerger is available at JitPack's Maven repo.
