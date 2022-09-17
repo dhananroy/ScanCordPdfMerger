@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">ScanCord</string>
-    <string name="my_documents">My\nDocuments</string>
-    <string name="search">Search</string>
-    <string name="successfully_created">Successfully created!</string>
-    <string name="failed">Something went wrong</string>
-    <string name="delete_msg">Successfully deleted</string>
-</resources>
