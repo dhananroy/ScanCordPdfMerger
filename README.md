@@ -23,3 +23,7 @@ dependencies {
 	           implementation 'com.github.dhananroy:ScanCordPdfMerger:1.0'
 	}
 ```
+
+```groovy
+                    MergePDF("File1PathInString", "File2PathInString", "FileOutPutPathInString", "OutPutFileName.pdf");	    
+```
