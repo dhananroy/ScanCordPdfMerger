@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ocr.OcrActivity">
+
+    <EditText
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentTop="true"
+        android:padding="20dp"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:background="@drawable/round_corner"
+        android:textColor="@color/secondary_black"
+        android:text="Hi!" />
+
+
+    <LinearLayout
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/rectangle_box"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageButton
+            android:id="@+id/playStop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:background="@drawable/shadow"
+            android:src="@drawable/play_ic"
+            app:tint="@color/white" />
+
+        <ImageButton
+            android:id="@+id/copyText"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="30dp"
+            android:background="@drawable/round_corner"
+            android:onClick="setClipboard"
+            android:padding="10dp"
+            android:src="@drawable/copy_ic"
+            app:tint="@color/secondary_black" />
+        <ImageButton
+            android:id="@+id/save"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@drawable/round_folder"
+            android:onClick="writeToFile"
+            android:padding="10dp"
+            android:src="@drawable/ic_save"
+            app:tint="@color/white" />
+    </LinearLayout>
+
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/scanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/gradient"
+        android:backgroundTint="@color/secondary"
+        android:clickable="true"
+        android:focusable="true"
+        android:foregroundGravity="center"
+        android:onClick="buttonStart"
+        android:scaleType="center"
+        app:borderWidth="0dp"
+        app:elevation="10dp"
+        app:fabCustomSize="65dp"
+        app:srcCompat="@drawable/ic_scanner"
+        app:tint="@android:color/white" />
+</RelativeLayout>

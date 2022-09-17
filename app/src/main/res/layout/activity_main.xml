@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/secondary_white">
+    <LinearLayout
+        android:id="@+id/appname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10sp"
+        android:padding="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/secondary_black"
+            android:text="@string/my_documents"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+        <ImageButton
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:gravity="right|center"
+            android:background="@color/transparent"
+            android:src="@drawable/setting"
+            app:tint="@color/secondary_black" />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@+id/appname"
+        android:layout_margin="10dp"
+        android:padding="1dp"
+        android:background="@drawable/round_corner"
+        app:layout_anchorGravity="bottom|center"
+        android:layout_gravity="bottom">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="10dp"
+            android:src="@drawable/search" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|left"
+            android:text="@string/search"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/folders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@+id/search"
+        android:layout_gravity="bottom"
+        android:padding="10dp"
+        app:layout_anchorGravity="bottom|left">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="left"
+            android:textStyle="bold"
+            android:text="FOLDERS"/>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@+id/folders"
+        app:layout_anchorGravity="bottom|center"
+        android:layout_gravity="bottom"/>
+    <View
+        android:layout_width="8dp"
+        app:layout_anchor="@id/recyclerView"
+        app:layout_anchorGravity="bottom|center"
+        android:layout_gravity="bottom"
+        android:background="@android:color/transparent"
+        android:id="@+id/transparent_view"
+        android:layout_height="45dp"/>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@+id/transparent_view"
+        app:layout_anchorGravity="bottom|center"
+        android:layout_gravity="bottom"
+        android:fillViewport="true">
+        <RelativeLayout
+            android:id="@+id/rl1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_corner"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="left"
+                android:text="RECENT FILE"
+                android:textStyle="bold"
+                app:layout_anchorGravity="bottom|center" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+            <GridView
+                android:id="@+id/gridview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:verticalSpacing="5dp"
+                android:layout_marginTop="30dp"
+                android:horizontalSpacing="5dp"
+                android:scrollbars="vertical"
+                android:stretchMode="columnWidth"
+                android:numColumns="3"
+                android:gravity="center"
+                />
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:fabAlignmentMode="center"
+        app:fabCradleVerticalOffset="1dp"
+        app:fabCradleMargin="1dp"
+        app:backgroundTint="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/ocrPage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.4"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:padding="1dp"
+                    android:src="@drawable/ic_cameras"
+                    app:tint="@color/secondary_black" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:text="OCR"/>
+</LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/profile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.4">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:padding="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/setting"
+                    app:tint="@color/secondary_black"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"/>
+            </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/scanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/secondary"
+        android:background="@drawable/gradient"
+        android:foregroundGravity="center"
+        android:scaleType="center"
+        app:tint="@android:color/white"
+        app:borderWidth="0dp"
+        app:layout_anchor="@id/navigation"
+        app:elevation="10dp"
+        app:srcCompat="@drawable/ic_scanner"
+        android:clickable="true"
+        app:fabCustomSize="65dp"
+        android:focusable="true" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
