@@ -35,6 +35,9 @@ public class MergePdf {
                 int width = (int) (page.getWidth());
                 int height = (int) (page.getHeight());
                 Bitmap bitmapData = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+                Canvas canvas = new Canvas(bitmapData);
+                canvas.drawColor(Color.WHITE);
+                canvas.drawBitmap(bitmapData, 0, 0, null);
                 page.render(bitmapData, null, null, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY);
                 page.close();
                 bitmaps[pageNum] = bitmapData;
@@ -62,7 +65,6 @@ public class MergePdf {
         for (Bitmap i: finalBitmap) {
             bitmaps[k++] = i;
         }
-
         CreatePDF(bitmaps, outputPath, outPutName,90, 590.0F);
     }
 
@@ -87,7 +89,7 @@ public class MergePdf {
                 PdfDocument.Page page = pdfDocument.startPage(pageInfo);
                 Canvas canvas = page.getCanvas();
                 Paint paint = new Paint();
-                paint.setColor(Color.BLUE);
+                paint.setColor(Color.WHITE);
                 canvas.drawPaint(paint);
                 canvas.drawBitmap(bitmap, 0f, 0f, null);
                 pdfDocument.finishPage(page);
