@@ -65,7 +65,7 @@ public class MergePdf {
         for (Bitmap i: finalBitmap) {
             bitmaps[k++] = i;
         }
-        CreatePDF(bitmaps, outputPath, outPutName,90, 590.0F);
+        CreatePDF(bitmaps, outputPath, outPutName,100, 1240.0F);
     }
 
     public static String  CreatePDF(Bitmap[] bitmaps, String pdf_name, String directoryPath,  int quality, float width){
